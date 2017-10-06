@@ -1,6 +1,5 @@
 #Set Directory
-setwd("C:/Data Science Book/R/Titanic")
-#setwd("~/Desktop/Titanic.Data")
+setwd("C:/Data Science/kaggle/Titanic")
 
 # To read the data
 train <- read.csv("train.csv", header = TRUE)
@@ -101,7 +100,7 @@ ggplot(train, aes(x = Embarked, fill = factor(Survived))) +
   xlab("Embarked") +
   ylab("Total Count") +
   labs(fill = "Survived")
-#Doesnt say anything special!
+#Does not say anything special!
 
 #numbers of companians:
 data.apended$Companians <- data.apended$SibSp+data.apended$Parch
@@ -143,7 +142,7 @@ ggplot(data.apended[1:891,], aes(x = Fare, fill = Survived)) +
 
 library(Amelia)
 missmap(data.apended[1:891,])
-# data.apended[1:891,]
+# So, age is significantly missing data
 
 
 #Skewed data?!
