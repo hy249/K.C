@@ -47,13 +47,15 @@ Name2 <- strsplit(sapply(Name2, "[", 2), " ")
 titles <- sapply(Name2, "[", 2)
 table(titles)
 unique(titles)
+# So there are similar titles that can be considered in one title
+#The default code I used for merging them
 
-titles[titles %in% c("Dona.", "the")] <- "Lady."
-titles[titles %in% c("Ms.", "Mlle.")] <- "Miss."
-titles[titles == "Mme."] <- "Mrs."
-titles[titles %in% c("Jonkheer.", "Don.")] <- "Sir."
-titles[titles %in% c("Col.", "Capt.", "Major.")] <- "Officer"
+titles[titles %in% c("???", "???")] <- "for example: Miss"
+titles[titles %in% c("???", "???", "???")] <- "???"
+titles[titles == "???"] <- "???."
 table(titles)
+# The complete code could be sent by request
+
 
 data.apended[ , "Titles"] <- titles
 data.apended$Titles <- as.factor(data.apended$Titles)
